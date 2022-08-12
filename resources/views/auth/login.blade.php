@@ -3,7 +3,28 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-8 col-sm-8 col-lg-5">
+            <div class="card">
+                <h1 class="text-center display-5">{{ __('Login') }}</h1>
+                <div class="mx-auto">
+                    <div id="circulo">
+                        <img src="{{ asset('img/pet-house.png') }}" alt="" width="100">
+                    </div> 
+                </div>          
+                <div class="form-floating col-6 mx-auto my-3">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('Email Address') }}:" required autocomplete="email" autofocus>
+                    <label for="floatingInput" class="lead text-center">{{ __('Email Address') }}:</label>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+           
+            
+
+
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

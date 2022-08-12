@@ -6,3 +6,13 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+#circulo {
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	background: #0a4a8b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

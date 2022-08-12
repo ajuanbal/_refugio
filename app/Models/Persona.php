@@ -16,7 +16,7 @@ class Persona extends Model
         'apellido',
         'telefono',
         'cedula',
-        'sexo,'
+        'sexo',
     ];
     
     public function mascota(): HasOne{

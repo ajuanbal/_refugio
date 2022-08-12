@@ -21,11 +21,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-dark navbar-expand-sm  bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                @auth
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('img/pet-house.png') }}" alt="" width="30" height="25" class="d-inline-block align-text-top">
+                        {{ config('app.name') }}
+                    </a>
+                @endauth
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,8 +36,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Mascotas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Solicitudes</a>
+                            </li>
+                        @endauth
                     </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -74,9 +85,13 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
+            <footer class="d-flex flex-wrap justify-content-between align-items-center px-2 py-2 my-2 border-top fixed-bottom">
+                <div class="col-12 d-flex">
+                  <span class="text-muted ">&nbsp;&copy; 2022 - Juemlis</span>
+                </div>
+            </footer>
         </main>
     </div>
 </body>
